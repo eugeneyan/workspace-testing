@@ -1,5 +1,5 @@
 import pytest
-from test.model.dummy_model import DummyModel
+from ..model.dummy_model import DummyModel
 
 def test_dummy_model_predict_with_numeric_input():
     model = DummyModel()
@@ -10,4 +10,3 @@ def test_dummy_model_predict_with_numeric_input():
 def test_dummy_model_predict_with_string_input():
     model = DummyModel()
     assert model.predict("string") == "Error: Input must be numeric."
-
