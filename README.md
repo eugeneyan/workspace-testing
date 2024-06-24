@@ -29,3 +29,13 @@ http://127.0.0.1:8000/ping
 ```
 
 This endpoint returns a simple `pong` message, indicating that the server is healthy and ready to process requests.
+
+## Testing the Dummy Model
+
+To run tests for the dummy model, navigate to the project directory and execute the following command:
+
+```
+python -m unittest test/test_server.py
+```
+
+This command will run the tests defined in `test_server.py`, testing the dummy model with both numeric and string inputs to ensure it behaves as expected.

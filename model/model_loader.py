@@ -5,7 +5,7 @@ import torch
 def load_model(model_type: str, model_path: str):
     """
     Load a model based on its type and file path.
-    Supports sklearn, xgboost, and PyTorch models.
+    Supports sklearn, xgboost, PyTorch models, and a dummy model.
     """
     if model_type == 'sklearn':
         return joblib.load(model_path)
@@ -15,5 +15,8 @@ def load_model(model_type: str, model_path: str):
         model = torch.load(model_path)
         model.eval()
         return model
+    elif model_type == 'dummy':
+        from test.model.dummy_model import DummyModel
+        return DummyModel()
     else:
         raise ValueError("Unsupported model type")
